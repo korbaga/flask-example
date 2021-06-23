@@ -2,7 +2,7 @@
 
 install mongodb
 pip install Flask request jsonify json monogoengine
->python app.py
+python app.py
 
 # CLI commands
 import json, request
@@ -23,7 +23,7 @@ r.text
 HP_json = '{ "_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914", "dis": "Unitary HP", "equip": "m", "heatPump": "m", "siteRef": "6b25c3c7-39e4-4be7-84a9-17e80feecaf5"}'
 r = requests.post('http://localhost:5002/', data = HP_json)
 
-##delete
+## delete
 r = requests.delete('http://localhost:5002/', params = {"_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914"})
 
 # browser
