@@ -18,3 +18,5 @@ r.text
  
 r = requests.delete('http://10.40.7.78:5002/', params = {"_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914"})
 r.text 
+
+r = requests.put('http://10.40.7.78:5002/update', json = {"_id": "bf34cfc8-cfe2-44d0-bf0a-ce462e2dc1c2", "sensorFault": "1"})
