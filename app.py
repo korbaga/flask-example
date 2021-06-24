@@ -7,10 +7,10 @@ from flask_mongoengine import MongoEngine
 app = Flask(__name__)
 
 app.config['MONGODB_SETTINGS'] = {
-    'db': 'your_database',
-    'host': 'localhost',
-    'port': 27017
+        'connect': False,
+        'host': 'mongodb://127.0.0.1:27018/test_db?authSource=admin'
 }
+
 db = MongoEngine()
 db.init_app(app)
 
