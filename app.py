@@ -24,10 +24,10 @@ class User(db.Document):
     fan = db.StringField()
     point = db.StringField()
     sensor = db.StringField()
-    sensorFault = db.StringField()
+    sensorFault = db.BooleanField(default=False)
     speedCmd = db.StringField()
     temp = db.StringField()
-    value = db.StringField()
+    value = db.FloatField()
     
     def to_json(self):
         return {"_id": self._id,
@@ -61,14 +61,15 @@ user2 = User(_id = "bf34cfc8-cfe2-44d0-bf0a-ce462e2dc1c2",
              dis = "Return_Air_Temperature_Sensor",
              temp = "m",
              sensor = "m",
-             sensorFault = "0",
-             value = "72",
+             sensorFault = False,
+             value = 72,
              point = "m",
              equipRef = "ee349ca0-f8aa-4b83-9fc6-86d727399914")
 user2.save()
 user3 = User(_id = "af34cfc8-cfe2-44d0-bf0a-ce462e2dc1c1",
             dis = "FanSpeed",
             speedCmd = "m",
+            value = 0,
             point = "m",
             equipRef = "ce731aa1-fb9c-40b9-8f6b-ec6c42c9eadb")
 user3.save()
