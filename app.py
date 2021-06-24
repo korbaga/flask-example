@@ -92,6 +92,14 @@ def get_one_object(id: str):
     return user.to_json(), 200
 
 #
+#http://localhost:5002/all_objects
+#
+@app.route('/all_objects')
+def get_all_objects():
+    user = User.objects()
+    return user.to_json(), 200
+    
+#
 #r = requests.put('http://localhost:5002/update', json = {"_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914", "fan": "n"})
 #THIS CHANGES 'fan' -> n'
 #
