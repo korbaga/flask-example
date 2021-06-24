@@ -27,6 +27,7 @@ class User(db.Document):
     sensorFault = db.StringField()
     speedCmd = db.StringField()
     temp = db.StringField()
+    value = db.StringField()
     
     def to_json(self):
         return {"_id": self._id,
@@ -40,7 +41,8 @@ class User(db.Document):
                 "sensor": self.sensor,
                 "sensorFault": self.sensorFault,
                 "speedCmd": self.speedCmd,
-                "temp": self.temp
+                "temp": self.temp,
+                "value": self.value
                 }
 
 user = User(_id = "ee349ca0-f8aa-4b83-9fc6-86d727399914",
@@ -60,6 +62,7 @@ user2 = User(_id = "bf34cfc8-cfe2-44d0-bf0a-ce462e2dc1c2",
              temp = "m",
              sensor = "m",
              sensorFault = "0",
+             value = "72",
              point = "m",
              equipRef = "ee349ca0-f8aa-4b83-9fc6-86d727399914")
 user2.save()
