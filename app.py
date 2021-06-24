@@ -24,6 +24,7 @@ class User(db.Document):
     fan = db.StringField()
     point = db.StringField()
     sensor = db.StringField()
+    sensorFault = db.StringField()
     speedCmd = db.StringField()
     temp = db.StringField()
     
@@ -37,6 +38,7 @@ class User(db.Document):
                 "fan": self.fan,
                 "point": self.point,
                 "sensor": self.sensor,
+                "sensorFault": self.sensorFault,
                 "speedCmd": self.speedCmd,
                 "temp": self.temp
                 }
@@ -57,6 +59,7 @@ user2 = User(_id = "bf34cfc8-cfe2-44d0-bf0a-ce462e2dc1c2",
              dis = "Return_Air_Temperature_Sensor",
              temp = "m",
              sensor = "m",
+             sensorFault = "0",
              point = "m",
              equipRef = "ee349ca0-f8aa-4b83-9fc6-86d727399914")
 user2.save()
