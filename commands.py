@@ -8,8 +8,10 @@ URL = 'http://10.40.7.78:5002/'
 #http://10.40.7.78:5002/all_objects
 print("get request")     
 r = requests.get(url=URL, params = {"_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914"})
-print(r.json())
+#r = requests.get(url=URL, params = {"id": "62b1928c-7331-02a3-bc74-3dba18ca91a2"})
 
+print(r.json())
+#pdb.set_trace()
 print("put request with single json field")
 r = requests.put(url=URL+'update', json = {"_id": "ee349ca0-f8aa-4b83-9fc6-86d727399914", "fan": "n"})
 if r.status_code != 200:
